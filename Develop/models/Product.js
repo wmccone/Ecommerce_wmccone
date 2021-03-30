@@ -22,7 +22,7 @@ Product.init(
     price: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      // will only allow alphanumeric characters
+      // will only allow decimal characters
       validate: {
         isDecimal: true,
       },
@@ -30,7 +30,7 @@ Product.init(
     stock: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      // will only allow alphanumeric characters
+      // will only allow numeric characters
       validate: {
         isNumeric: true,
       },
