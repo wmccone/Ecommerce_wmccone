@@ -8,6 +8,7 @@
 
   * [Installation](#installation)
   * [Usage](#usage)
+  * [Video](#video)
   * [License](#license)
   * [Contributors](#contributors)
   * [Questions](#questions?)
@@ -17,14 +18,35 @@
 
   1) Clone the repo to your local computer 
   2) Run NPM Install to install the dependencies. 
-  3) Load the Schema into MySQLworkbench 
-  4) initiate NPM run seed 
-  5) initiate npm start
-  6) You can use Insomnia to test the functionality or wire it up to your front end application.
+  3) Create a .env file using the example provided.
+  4) Load the Schema into MySQLworkbench 
+  5) Initiate NPM run seed 
+  6) Initiate npm start
+  7) You can use Insomnia to test the functionality or wire it up to your front end application.
 
   ## Usage
 
-  If testing with Insomnia create get, post, put, and delete actions for the product, tag and categories routes. Using the object structure provided for each route you should be able to manipulate the data in the database.
+  If testing with Insomnia create get, post, put, and delete actions for the product, tag and categories routes. Take a look at the object syntax provided below to properly post or put to each route.
+
+  Product route example:
+
+  ![productExample](./Demo/productObject.PNG)
+
+  Category route example:
+
+  ![categoryExample](./Demo/categoryObject.PNG)
+
+  Tag route example:
+
+  ![tagExample](./Demo/tagObject.PNG)
+
+  Insomnia setup example:
+
+  ![insomniademo](./Demo/insomniaExample.PNG)
+
+  ## Video
+  [Demonstration](https://www.youtube.com/watch?v=ohY3OBVKEtA)
+
 
   ## License
 
