@@ -8,6 +8,7 @@ router.get('/', async (req, res) => {
   // be sure to include its associated Product data
   try {
     const tagData = await Tag.findAll({
+      //this will allow us to include product data on each tag
       include: [{ model: Product}],
     });
     res.status(200).json(tagData);
@@ -21,6 +22,7 @@ router.get('/:id', async (req, res) => {
   // be sure to include its associated Product data
   try {
     const tagData = await Tag.findByPk(req.params.id, {
+       //this will allow us to include product data on the tag searched
       include: [{ model: Product }],
     });
 
@@ -37,7 +39,12 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   // create a new tag
+  // Use this object syntax when running a post request
+  // {
+  //   "tag_name": "Organic"
+  // }
   try {
+    //This is going to create the tag data in the tag table
     const tagData = await Tag.create(req.body);
     res.status(200).json(tagData);
   } catch (err) {
@@ -47,6 +54,7 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
   // update a tag's name by its `id` value
+  // Be sure to use the same object syntax as we did with the post route
   try {
     const tagData = await Tag.update(req.body, {
       where: {
@@ -66,6 +74,7 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   // delete on tag by its `id` value
   try {
+    //This will delete the tag data in the tag table
     const tagData = await Tag.destroy({
       where: {
         id: req.params.id,

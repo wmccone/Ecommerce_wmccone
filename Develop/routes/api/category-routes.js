@@ -8,7 +8,9 @@ router.get('/', async (req, res) => {
   // be sure to include its associated Products
 
   try {
+    //Going to find all the records in the category table
     const categoryData = await Category.findAll({
+      //this allows us to include any products associated with each category
       include: [{ model: Product }],
     });
     res.status(200).json(categoryData);
@@ -22,7 +24,9 @@ router.get('/:id', async (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
   try {
+    //This is going to search for the category based off of the ID in the endpoint
     const categoryData = await Category.findByPk(req.params.id, {
+        //this allows us to include any products associated with each category
       include: [{ model: Product }],
     });
 
@@ -40,6 +44,10 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   // create a new category
   try {
+    // To post a new category use this object syntax
+    // {
+    //   "category_name": "Equipment"
+    // }
     const categoryData = await Category.create(req.body);
     res.status(200).json(categoryData);
   } catch (err) {
@@ -48,7 +56,10 @@ router.post('/', async (req, res) => {
 });
 
 router.put('/:id', async (req, res) => {
-  // update a category by its `id` value
+  // update a category by its `id` value use the same object syntax as we used in the post
+  // {
+  //   "category_name": "Outdoor Gear"
+  // }
   try {
     const categoryData = await Category.update(req.body, {
       where: {

@@ -15,10 +15,12 @@ Product.init(
       primaryKey: true,
       autoIncrement: true
     },
+    //this is going to create the name of the product
     product_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    //this is going to create the price of the product using a decimal type
     price: {
       type: DataTypes.DECIMAL(15,2),
       allowNull: false,
@@ -27,6 +29,7 @@ Product.init(
         isDecimal: true,
       },
     },
+    //this is going to create the amount of the product that is available
     stock: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -36,6 +39,7 @@ Product.init(
         isNumeric: true,
       },
     },
+    //Will reference the pk in category
     category_id: {
       type: DataTypes.INTEGER,
       references: {

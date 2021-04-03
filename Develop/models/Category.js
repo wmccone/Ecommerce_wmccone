@@ -13,6 +13,7 @@ Category.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    //this is going to be the name of the category that hosts its products.
     category_name: {
       type: DataTypes.STRING,
       allowNull: false,

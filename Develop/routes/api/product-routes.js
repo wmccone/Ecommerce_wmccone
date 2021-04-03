@@ -9,7 +9,9 @@ router.get('/', async (req, res) => {
   // be sure to include its associated Category and Tag data
 
   try {
+    //Pull data from the entire category table
     const productData = await Product.findAll({
+      //this will allow us to include category and tag data in the query
       include: [
         {
           model: Category
@@ -32,6 +34,7 @@ router.get('/:id', async (req, res) => {
   // be sure to include its associated Category and Tag data
   try {
     const productData = await Product.findByPk(req.params.id, {
+       //this will allow us to include category and tag data in the query
       include: [{ model: Category }, { model: Tag }],
     });
 
@@ -123,6 +126,7 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', async (req, res) => {
   // delete one product by its `id` value
   try {
+    //this is going to allow us to delete the record by the ID
     const productData = await Product.destroy({
       where: {
         id: req.params.id,
